@@ -8,6 +8,6 @@
 
 ## Images
 
-![Some_text](https://raw.githubusercontent.com/ProgrammerFox/first_RayMarchingHLSL/main/images/movie.gif "GIF")
+![Some_text](https://raw.githubusercontent.com/ProgrammerFox/my_simple_RayMarching/main/images/movie.gif "GIF")
 
-![Some_text](https://raw.githubusercontent.com/ProgrammerFox/first_RayMarchingHLSL/main/images/RayMarchingScreen1.png "Image")
+![Some_text](https://raw.githubusercontent.com/ProgrammerFox/my_simple_RayMarching/main/images/RayMarchingScreen1.png "Image")
