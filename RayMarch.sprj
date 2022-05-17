@@ -72,7 +72,6 @@
 	<objects />
 	<cameras />
 	<settings>
-		<entry type="property" name="Simple" item="pipe" />
 		<entry type="file" name="Simple" shader="vs" />
 		<entry type="file" name="Simple" shader="ps" />
 		<entry type="pinned" name="origin_pos" owner="Simple" />
@@ -83,8 +82,8 @@
 		<entry type="pinned" name="Foggy_Color" owner="Simple" />
 		<entry type="camera" fp="false">
 			<distance>17</distance>
-			<pitch>25</pitch>
-			<yaw>37</yaw>
+			<pitch>27</pitch>
+			<yaw>16</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="1" />

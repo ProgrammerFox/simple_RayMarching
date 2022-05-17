@@ -66,7 +66,7 @@ float4 main(float4 fragCoord : SV_POSITION) : SV_TARGET
     float2 uv = fragCoord.xy/uResolution;
 
     float3 Camera_matrix = lower_left_corner + horizontal * uv.x + vertical * uv.y;
-    //float3 Camera_matrix = float3(-7.033, 6.251, -13.052) + float3(-0.755, 0, 0.436) * uv.x + float3(0.203, 0.914, 0.352) * uv.y;
+
     rd = 1 * (Camera_matrix - ro);
 
     rd = normalize(rd);
@@ -91,13 +91,13 @@ float4 main(float4 fragCoord : SV_POSITION) : SV_TARGET
 	float2 rot_factor = ro.xz * rot_mat;
     
     float3 col_ro = float3(rot_factor.x, ro.y, rot_factor.y);
-    float3 col = (col_ro + float3(0.5f, 4, 10)) * 0.2;
+    float3 col = (col_ro + float3(0.5, 4, 10)) * 0.2;
 
     float3 normal = GetNormal(ro);
-    col *= dot(light, -normal)*0.4f + 0.5f;
-    col *= exp(-sqrt(itr) * 0.05)*1.1;
+    col *= dot(light, -normal) * 0.4 + 0.5;
+    col *= exp(-sqrt(itr) * 0.05) * 1.1;
 
-	float Foggy_Density = (Foggy - was_min_dist + Solid_Foggy)/Foggy;
+	float Foggy_Density = (Foggy - was_min_dist + Solid_Foggy) / Foggy;
 
     return dist <= 0.01f ? float4(col.xyz, 0) : (was_min_dist < Foggy ? float4(Foggy_Color * Foggy_Density + float3(0.8) * (1 - Foggy_Density), 1) : 0.8);
 }
