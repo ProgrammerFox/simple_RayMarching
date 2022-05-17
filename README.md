@@ -8,6 +8,6 @@
 
 ## Images
 
-![The GIF of proj](https://raw.githubusercontent.com/ProgrammerFox/my_simple_RayMarching/main/images/movie.gif "GIF")
+![The GIF of project](https://raw.githubusercontent.com/ProgrammerFox/my_simple_RayMarching/main/images/movie.gif "GIF")
 
-![The image of proj](https://raw.githubusercontent.com/ProgrammerFox/my_simple_RayMarching/main/images/RayMarchingScreen1.png "Image")
+![The image of project](https://raw.githubusercontent.com/ProgrammerFox/my_simple_RayMarching/main/images/RayMarchingScreen1.png "Image")
