@@ -38,11 +38,6 @@
 						<value>0</value>
 					</row>
 				</variable>
-				<variable type="float" name="scale">
-					<row>
-						<value>0.850000024</value>
-					</row>
-				</variable>
 				<variable type="float" name="SDF">
 					<row>
 						<value>0.00899999961</value>
@@ -72,10 +67,10 @@
 	<objects />
 	<cameras />
 	<settings>
+		<entry type="property" name="Simple" item="pipe" />
 		<entry type="file" name="Simple" shader="vs" />
 		<entry type="file" name="Simple" shader="ps" />
 		<entry type="pinned" name="origin_pos" owner="Simple" />
-		<entry type="pinned" name="scale" owner="Simple" />
 		<entry type="pinned" name="SDF" owner="Simple" />
 		<entry type="pinned" name="Foggy" owner="Simple" />
 		<entry type="pinned" name="Solid_Foggy" owner="Simple" />

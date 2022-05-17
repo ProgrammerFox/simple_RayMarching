@@ -5,7 +5,7 @@ cbuffer vars : register(b0)
 
 	float4 camPos;
 	float3 origin_pos;
-	float scale;
+
 	float SDF;
 	float Foggy;
 	float Solid_Foggy;
@@ -38,7 +38,7 @@ float GetDist(float3 ro)
 float3 GetNormal(float3 p)
 {
     float d = GetDist(p);
-    float2 e = float2(0.001f, 0);
+    float2 e = float2(0.001, 0);
     float3 n = d - float3(GetDist(p - e.xyy), GetDist(p - e.yxy), GetDist(p - e.yyx));
     return normalize(n);
 }
@@ -57,7 +57,7 @@ float4 main(float4 fragCoord : SV_POSITION) : SV_TARGET
 	
 	float3 ro = look_from, rd;
 	float3 vertical = v, horizontal = uResolution.x / uResolution.y * u;
-    float3 lower_left_corner = ro  - vertical/2 -  horizontal/2 - w;
+    float3 lower_left_corner = ro  - vertical / 2 -  horizontal / 2 - w;
 
 
 	
@@ -73,9 +73,8 @@ float4 main(float4 fragCoord : SV_POSITION) : SV_TARGET
 
     float dist = 1, maxdist = 1000, l_dist = 0, was_min_dist = 3.402823466e+38F;
     int itr = 0;
-    for(int i = 0; i < 200; i++)
+    for(int i = 0; i < 125; i++)
     {
-    
     	itr = i;
 
     	dist = GetDist(ro) ;
