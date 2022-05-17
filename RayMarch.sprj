@@ -48,6 +48,23 @@
 						<value>0.00899999961</value>
 					</row>
 				</variable>
+				<variable type="float" name="Foggy">
+					<row>
+						<value>0</value>
+					</row>
+				</variable>
+				<variable type="float" name="Solid_Foggy">
+					<row>
+						<value>0</value>
+					</row>
+				</variable>
+				<variable type="float3" name="Foggy_Color">
+					<row>
+						<value>0.191947043</value>
+						<value>0.23272194</value>
+						<value>0.67181468</value>
+					</row>
+				</variable>
 			</variables>
 			<macros />
 		</pass>
@@ -61,6 +78,9 @@
 		<entry type="pinned" name="origin_pos" owner="Simple" />
 		<entry type="pinned" name="scale" owner="Simple" />
 		<entry type="pinned" name="SDF" owner="Simple" />
+		<entry type="pinned" name="Foggy" owner="Simple" />
+		<entry type="pinned" name="Solid_Foggy" owner="Simple" />
+		<entry type="pinned" name="Foggy_Color" owner="Simple" />
 		<entry type="camera" fp="false">
 			<distance>17</distance>
 			<pitch>25</pitch>

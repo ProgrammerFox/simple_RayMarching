@@ -7,6 +7,9 @@ cbuffer vars : register(b0)
 	float3 origin_pos;
 	float scale;
 	float SDF;
+	float Foggy;
+	float Solid_Foggy;
+	float3 Foggy_Color;
 	
 };
 
@@ -68,7 +71,7 @@ float4 main(float4 fragCoord : SV_POSITION) : SV_TARGET
 
     rd = normalize(rd);
 
-    float dist = 1, maxdist = 1000, l_dist = 0;
+    float dist = 1, maxdist = 1000, l_dist = 0, was_min_dist = 3.402823466e+38F;
     int itr = 0;
     for(int i = 0; i < 200; i++)
     {
@@ -79,6 +82,7 @@ float4 main(float4 fragCoord : SV_POSITION) : SV_TARGET
     	maxdist -= dist;
     	l_dist += dist;
     	ro += rd * dist;
+    	was_min_dist  = min(was_min_dist, dist);
     	if(dist < SDF || maxdist < 0) break;
     	
     }
@@ -93,5 +97,7 @@ float4 main(float4 fragCoord : SV_POSITION) : SV_TARGET
     col *= dot(light, -normal)*0.4f + 0.5f;
     col *= exp(-sqrt(itr) * 0.05)*1.1;
 
-    return dist <= 0.01f ? float4(col.xyz, 0) : 0.8f;
+	float Foggy_Density = (Foggy - was_min_dist + Solid_Foggy)/Foggy;
+
+    return dist <= 0.01f ? float4(col.xyz, 0) : (was_min_dist < Foggy ? float4(Foggy_Color * Foggy_Density + float3(0.8) * (1 - Foggy_Density), 1) : 0.8);
 }
