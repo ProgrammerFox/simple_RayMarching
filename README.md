@@ -1,4 +1,4 @@
-# my first RayMarchingHLSL
+# RayMarchingHLSL
 
 ## Notes
 
