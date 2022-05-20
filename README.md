@@ -1,4 +1,4 @@
-# RayMarchingHLSL
+# Ray Marching HLSL
 
 ## Notes
 
